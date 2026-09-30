@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HeritGoa – AI Heritage Intelligence Platform | Goa, India</title>
+  <meta name="description" content="HeritGoa is Goa's living heritage platform powered by AI. Discover, document, and preserve Goa's rich cultural heritage — from ancient forts to Portuguese-era churches and living traditions." />
+  <meta name="keywords" content="Goa heritage, AI heritage, heritage preservation, Goa tourism, cultural heritage, Old Goa, heritage sites Goa" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════ NAV ═══════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" id="nav-logo">
+        <span class="logo-icon">🏛️</span>
+        <span class="logo-text">Herit<span class="logo-accent">Goa</span></span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#heritage-sites" class="nav-link">Heritage Sites</a></li>
+        <li><a href="#stats" class="nav-link">Impact</a></li>
+        <li><a href="#community" class="nav-link">Community</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn-ghost" id="btn-report">Report Issue</a>
+        <a href="#" class="btn-primary" id="btn-explore">Explore Map</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════ HERO ═══════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="assets/hero_goa_heritage.jpg" alt="Goa coastal fort with Arabian Sea" class="hero-img" id="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-particles" id="hero-particles"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge animate-fade-up" style="--delay:0.1s">
+        <span class="badge-dot"></span>
+        <span>Goa's Living Heritage Platform</span>
+      </div>
+      <h1 class="hero-title animate-fade-up" style="--delay:0.25s">
+        Preserving Goa's<br />
+        <em>Timeless Stories</em><br />
+        with AI Intelligence
+      </h1>
+      <p class="hero-subtitle animate-fade-up" style="--delay:0.4s">
+        From Chapora's sunlit ramparts to the azulejo tiles of Fontainhas — HeritGoa tracks, documents, and protects every layer of Goa's irreplaceable cultural heritage.
+      </p>
+      <div class="hero-actions animate-fade-up" style="--delay:0.55s">
+        <a href="#" class="btn-hero-primary" id="btn-discover">
+          <span>Discover Heritage Sites</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#" class="btn-hero-secondary" id="btn-ai-identify">
+          <span>🤖 AI Identify</span>
+        </a>
+      </div>
+      <div class="hero-stats animate-fade-up" style="--delay:0.7s">
+        <div class="hero-stat">
+          <span class="stat-num" data-count="340">0</span><span>+</span>
+          <span class="stat-label">Heritage Sites</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-num" data-count="12">0</span><span>K+</span>
+          <span class="stat-label">Community Reports</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-num" data-count="6">0</span><span></span>
+          <span class="stat-label">Talukas Covered</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll" id="hero-scroll">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ MARQUEE ═══════════════ -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <span>🏰 Chapora Fort</span>
+      <span>⛪ Basilica of Bom Jesus</span>
+      <span>🏛️ Sé Cathedral</span>
+      <span>🕌 Safa Masjid</span>
+      <span>🏠 Fontainhas Quarter</span>
+      <span>⛩️ Shri Mangeshi Temple</span>
+      <span>🏰 Aguada Fort</span>
+      <span>🎨 Goa State Museum</span>
+      <span>🌿 Tambdi Surla Temple</span>
+      <span>🏺 Rachol Seminary</span>
+      <span>🏰 Chapora Fort</span>
+      <span>⛪ Basilica of Bom Jesus</span>
+      <span>🏛️ Sé Cathedral</span>
+      <span>🕌 Safa Masjid</span>
+      <span>🏠 Fontainhas Quarter</span>
+      <span>⛩️ Shri Mangeshi Temple</span>
+      <span>🏰 Aguada Fort</span>
+      <span>🎨 Goa State Museum</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ ABOUT ════════════════ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="section-tag">About HeritGoa</div>
+          <h2 class="section-title">Goa's Heritage Is <em>Living</em>,<br />Not Just Historic</h2>
+          <p class="about-desc">
+            Most tourism platforms show you the famous forts and churches. HeritGoa goes deeper — we document the crumbling house at the end of a narrow Panaji lane, the fishermen's chapel no guidebook mentions, and the oral stories that only elders still remember.
+          </p>
+          <p class="about-desc">
+            Powered by Gemini AI, our platform connects citizens, historians, authorities, and tourists in a shared mission: to see Goa's heritage not just as a relic of the past, but as a living, breathing part of the present.
+          </p>
+          <div class="about-features">
+            <div class="about-feat">
+              <span class="feat-icon">🤖</span>
+              <div>
+                <strong>AI-Powered Analysis</strong>
+                <p>Upload any photo; Gemini Vision identifies architectural styles, cultural context, and deterioration signals.</p>
+              </div>
+            </div>
+            <div class="about-feat">
+              <span class="feat-icon">📡</span>
+              <div>
+                <strong>Real-Time Condition Tracking</strong>
+                <p>Our deterioration engine compares images across years to flag at-risk sites before they collapse.</p>
+              </div>
+            </div>
+            <div class="about-feat">
+              <span class="feat-icon">🧑‍🤝‍🧑</span>
+              <div>
+                <strong>Community-Verified Stories</strong>
+                <p>Local voices — not just textbook facts — shape how we understand each heritage location.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="about-img-stack">
+            <img src="assets/bom_jesus_goa.jpg" alt="Basilica of Bom Jesus aerial view" class="stack-img stack-back" />
+            <img src="assets/fontainhas_goa.jpg" alt="Fontainhas heritage quarter" class="stack-img stack-front" />
+            <div class="about-badge-float">
+              <span class="float-icon">🛡️</span>
+              <div>
+                <strong>Heritage Protected</strong>
+                <span>AI-verified condition reports</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ FEATURES ══════════════ -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Platform Features</div>
+        <h2 class="section-title">Everything Goa's Heritage<br />Deserves</h2>
+        <p class="section-sub">A complete intelligence ecosystem — from discovery to preservation to community storytelling.</p>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card feature-card--hero" id="feat-map">
+          <div class="feat-card-bg" style="background-image: url('assets/chapora_fort_goa.jpg')"></div>
+          <div class="feat-card-overlay"></div>
+          <div class="feat-card-content">
+            <div class="feat-icon-large">🗺️</div>
+            <h3>Interactive Heritage Map</h3>
+            <p>Explore all 340+ heritage sites across Goa's 12 talukas on a real-time interactive map. Filter by category, condition, and cultural significance.</p>
+            <a href="#" class="feat-link">Explore Map →</a>
+          </div>
+        </div>
+
+        <div class="feature-card" id="feat-ai">
+          <div class="feat-icon-wrap" style="--c: #2563eb">🤖</div>
+          <h3>AI Heritage Identification</h3>
+          <p>Upload any photo. Gemini Vision analyses architectural styles, detects heritage categories, and links you to verified historical records.</p>
+          <div class="feat-tag">⭐ High Hackathon Value</div>
+        </div>
+
+        <div class="feature-card" id="feat-deterioration">
+          <div class="feat-icon-wrap" style="--c: #059669">📊</div>
+          <h3>Deterioration Tracking</h3>
+          <p>Compare photos from 2018 → 2022 → 2026. AI detects paint loss, structural cracks, vegetation growth, and flags at-risk sites to authorities.</p>
+          <div class="feat-tag feat-tag--hot">🔥🔥🔥 Signature Feature</div>
+        </div>
+
+        <div class="feature-card" id="feat-oral">
+          <div class="feat-icon-wrap" style="--c: #7c3aed">👵</div>
+          <h3>Local Oral Histories</h3>
+          <p>Community members contribute text, audio, and video stories. AI transcribes and moderates. Local voices preserved forever.</p>
+          <div class="feat-tag">🔥 Cultural Innovation</div>
+        </div>
+
+        <div class="feature-card" id="feat-report">
+          <div class="feat-icon-wrap" style="--c: #dc2626">🚨</div>
+          <h3>Damage Reporting</h3>
+          <p>Citizens can report damage instantly. AI classifies severity and type, creating a direct pipeline to the heritage authority dashboard.</p>
+          <div class="feat-tag">Civic Action</div>
+        </div>
+
+        <div class="feature-card" id="feat-photos">
+          <div class="feat-icon-wrap" style="--c: #0891b2">📸</div>
+          <h3>Historical Photo Archive</h3>
+          <p>Upload old photographs from family albums. Link them to heritage sites and years to build a visual timeline of Goa's evolution.</p>
+          <div class="feat-tag">Community-Powered</div>
+        </div>
+
+        <div class="feature-card" id="feat-translate">
+          <div class="feat-icon-wrap" style="--c: #d97706">🌐</div>
+          <h3>AI Translation</h3>
+          <p>Heritage content in Konkani, Marathi, and Portuguese translated to English and Hindi — without AI fabricating historical facts.</p>
+          <div class="feat-tag">Multilingual</div>
+        </div>
+
+        <div class="feature-card feature-card--cta" id="feat-more">
+          <div class="feat-cta-content">
+            <span class="feat-cta-num">+5</span>
+            <h3>More Features Coming</h3>
+            <p>AR Reconstruction, Heritage Trails, Artisan Directory, and more.</p>
+            <a href="#" class="btn-primary">See Roadmap</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ HERITAGE SITES ════════ -->
+  <section class="heritage-sites" id="heritage-sites">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Featured Heritage Sites</div>
+        <h2 class="section-title">The Soul of Goa,<br /><em>Site by Site</em></h2>
+        <p class="section-sub">From UNESCO World Heritage landmarks to hidden gems only locals know — every site has a story worth preserving.</p>
+      </div>
+
+      <div class="sites-filter">
+        <button class="filter-btn active" data-filter="all" id="filter-all">All Sites</button>
+        <button class="filter-btn" data-filter="fort" id="filter-fort">🏰 Forts</button>
+        <button class="filter-btn" data-filter="church" id="filter-church">⛪ Churches</button>
+        <button class="filter-btn" data-filter="temple" id="filter-temple">⛩️ Temples</button>
+        <button class="filter-btn" data-filter="quarter" id="filter-quarter">🏠 Heritage Quarters</button>
+      </div>
+
+      <div class="sites-grid">
+
+        <div class="site-card" data-cat="church" id="site-bom-jesus">
+          <div class="site-img-wrap">
+            <img src="assets/bom_jesus_goa.jpg" alt="Basilica of Bom Jesus" class="site-img" />
+            <div class="site-status site-status--good">🟢 Good Condition</div>
+            <div class="site-cat-badge">⛪ Church</div>
+          </div>
+          <div class="site-info">
+            <h3>Basilica of Bom Jesus</h3>
+            <p class="site-loc">📍 Old Goa, North Goa</p>
+            <p class="site-desc">A UNESCO World Heritage Site and one of the finest examples of Baroque architecture in India. Houses the mortal remains of St. Francis Xavier.</p>
+            <div class="site-meta">
+              <span>🏛️ Est. 1605</span>
+              <span>📸 142 photos</span>
+              <span>👥 38 stories</span>
+            </div>
+            <a href="#" class="site-btn">View Full Profile →</a>
+          </div>
+        </div>
+
+        <div class="site-card" data-cat="fort" id="site-chapora">
+          <div class="site-img-wrap">
+            <img src="assets/chapora_fort_goa.jpg" alt="Chapora Fort" class="site-img" />
+            <div class="site-status site-status--warn">⚠️ Needs Attention</div>
+            <div class="site-cat-badge">🏰 Fort</div>
+          </div>
+          <div class="site-info">
+            <h3>Chapora Fort</h3>
+            <p class="site-loc">📍 Vagator, North Goa</p>
+            <p class="site-desc">Perched dramatically above Vagator Beach, this 16th-century fort offers panoramic views of the Arabian Sea. Parts of the structure show visible deterioration.</p>
+            <div class="site-meta">
+              <span>🏛️ Est. 1617</span>
+              <span>📸 89 photos</span>
+              <span>👥 21 stories</span>
+            </div>
+            <a href="#" class="site-btn">View Full Profile →</a>
+          </div>
+        </div>
+
+        <div class="site-card" data-cat="church" id="site-se-cathedral">
+          <div class="site-img-wrap">
+            <img src="assets/se_cathedral_goa.jpg" alt="Sé Cathedral" class="site-img" />
+            <div class="site-status site-status--good">🟢 Good Condition</div>
+            <div class="site-cat-badge">⛪ Cathedral</div>
+          </div>
+          <div class="site-info">
+            <h3>Sé Cathedral</h3>
+            <p class="site-loc">📍 Old Goa, North Goa</p>
+            <p class="site-desc">The largest church in Asia, built during the reign of the Portuguese Viceroy. Dedicated to St. Catherine of Alexandria and known for its Golden Bell.</p>
+            <div class="site-meta">
+              <span>🏛️ Est. 1619</span>
+              <span>📸 207 photos</span>
+              <span>👥 54 stories</span>
+            </div>
+            <a href="#" class="site-btn">View Full Profile →</a>
+          </div>
+        </div>
+
+        <div class="site-card" data-cat="quarter" id="site-fontainhas">
+          <div class="site-img-wrap">
+            <img src="assets/fontainhas_goa.jpg" alt="Fontainhas Latin Quarter" class="site-img" />
+            <div class="site-status site-status--warn">⚠️ Monitoring Active</div>
+            <div class="site-cat-badge">🏠 Heritage Quarter</div>
+          </div>
+          <div class="site-info">
+            <h3>Fontainhas, Panaji</h3>
+            <p class="site-loc">📍 Panaji, North Goa</p>
+            <p class="site-desc">Goa's famous Latin Quarter with brightly painted Portuguese-era houses, narrow winding lanes, and azulejo tile façades. A living heritage neighbourhood.</p>
+            <div class="site-meta">
+              <span>🏛️ 18th Century</span>
+              <span>📸 315 photos</span>
+              <span>👥 76 stories</span>
+            </div>
+            <a href="#" class="site-btn">View Full Profile →</a>
+          </div>
+        </div>
+
+        <div class="site-card" data-cat="temple" id="site-mangeshi">
+          <div class="site-img-wrap">
+            <img src="assets/mangeshi_temple_goa.jpg" alt="Shri Mangeshi Temple" class="site-img" />
+            <div class="site-status site-status--good">🟢 Good Condition</div>
+            <div class="site-cat-badge">⛩️ Temple</div>
+          </div>
+          <div class="site-info">
+            <h3>Shri Mangeshi Temple</h3>
+            <p class="site-loc">📍 Priol, South Goa</p>
+            <p class="site-desc">One of Goa's most visited temples, dedicated to Lord Mangesh (Shiva). Known for its distinctive seven-storeyed lamp tower (deepastambha) and unique blend of Portuguese and Hindu architecture.</p>
+            <div class="site-meta">
+              <span>🏛️ 16th Century</span>
+              <span>📸 178 photos</span>
+              <span>👥 63 stories</span>
+            </div>
+            <a href="#" class="site-btn">View Full Profile →</a>
+          </div>
+        </div>
+
+        <div class="site-card site-card--explore" id="site-view-all">
+          <div class="explore-content">
+            <span class="explore-count">340+</span>
+            <h3>Heritage Sites Catalogued</h3>
+            <p>Explore the complete interactive map of Goa's documented heritage sites.</p>
+            <a href="#" class="btn-primary" id="btn-view-all-sites">View All on Map</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ DETERIORATION ═════════ -->
+  <section class="deterioration" id="deterioration">
+    <div class="container">
+      <div class="detr-grid">
+        <div class="detr-text">
+          <div class="section-tag">Signature Feature</div>
+          <h2 class="section-title">Track How Heritage<br /><em>Changes Over Time</em></h2>
+          <p class="detr-desc">
+            Our AI deterioration engine compares photographs of the same site uploaded across different years. It identifies subtle and severe changes — alerting preservation authorities before irreversible damage occurs.
+          </p>
+          <div class="detr-timeline">
+            <div class="timeline-item tl-2018">
+              <div class="tl-year">2018</div>
+              <div class="tl-bar tl-bar--good"></div>
+              <div class="tl-label">Original Condition</div>
+            </div>
+            <div class="timeline-arrow">→</div>
+            <div class="timeline-item tl-2022">
+              <div class="tl-year">2022</div>
+              <div class="tl-bar tl-bar--warn"></div>
+              <div class="tl-label">Paint Fading Detected</div>
+            </div>
+            <div class="timeline-arrow">→</div>
+            <div class="timeline-item tl-2026">
+              <div class="tl-year">2026</div>
+              <div class="tl-bar tl-bar--danger"></div>
+              <div class="tl-label">Structural Risk Flagged</div>
+            </div>
+          </div>
+          <div class="detr-indicators">
+            <h4>AI Condition Dashboard</h4>
+            <div class="indicator-row">
+              <span class="ind-label">Wall Integrity</span>
+              <div class="ind-bar"><div class="ind-fill ind-warn" style="width:58%"></div></div>
+              <span class="ind-icon">⚠️</span>
+            </div>
+            <div class="indicator-row">
+              <span class="ind-label">Paint Condition</span>
+              <div class="ind-bar"><div class="ind-fill ind-danger" style="width:32%"></div></div>
+              <span class="ind-icon">🔴</span>
+            </div>
+            <div class="indicator-row">
+              <span class="ind-label">Architecture</span>
+              <div class="ind-bar"><div class="ind-fill ind-good" style="width:81%"></div></div>
+              <span class="ind-icon">🟢</span>
+            </div>
+            <div class="indicator-row">
+              <span class="ind-label">Vegetation Risk</span>
+              <div class="ind-bar"><div class="ind-fill ind-danger" style="width:74%"></div></div>
+              <span class="ind-icon">🔴</span>
+            </div>
+          </div>
+          <a href="#" class="btn-primary" id="btn-upload-photo" style="margin-top:2rem;display:inline-flex">Upload Heritage Photo →</a>
+        </div>
+        <div class="detr-visual">
+          <div class="detr-card">
+            <div class="detr-card-header">
+              <span class="detr-site-name">⚠️ Chapora Fort — North Wall</span>
+              <span class="detr-badge">AI Analysis Active</span>
+            </div>
+            <div class="detr-compare">
+              <div class="compare-item">
+                <img src="assets/chapora_fort_goa.jpg" alt="Chapora Fort 2018" class="compare-img" />
+                <span class="compare-year">2018</span>
+              </div>
+              <div class="compare-vs">VS</div>
+              <div class="compare-item compare-item--current">
+                <img src="assets/chapora_fort_goa.jpg" alt="Chapora Fort 2026" class="compare-img compare-img--aged" />
+                <span class="compare-year compare-year--now">2026</span>
+              </div>
+            </div>
+            <div class="detr-findings">
+              <h4>AI Detected Changes</h4>
+              <ul>
+                <li>🧱 Increased mortar erosion along north wall</li>
+                <li>🌿 Significant vegetation encroachment</li>
+                <li>💧 Moisture staining patterns expanding</li>
+                <li>🪟 Window arch showing micro-fractures</li>
+              </ul>
+              <div class="detr-risk-level">
+                <span>Risk Level:</span>
+                <span class="risk-badge risk-high">HIGH — Immediate Inspection Recommended</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ STATS ════════════════ -->
+  <section class="stats" id="stats">
+    <div class="stats-bg"></div>
+    <div class="container">
+      <div class="section-header section-header--light">
+        <div class="section-tag section-tag--light">Platform Impact</div>
+        <h2 class="section-title section-title--light">Goa's Heritage,<br />Quantified</h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card" id="stat-1">
+          <div class="stat-icon">🏛️</div>
+          <div class="stat-number counter" data-target="340">0</div>
+          <div class="stat-suffix">+</div>
+          <div class="stat-name">Heritage Sites Mapped</div>
+          <div class="stat-desc">Across all 12 talukas of Goa</div>
+        </div>
+        <div class="stat-card" id="stat-2">
+          <div class="stat-icon">📸</div>
+          <div class="stat-number counter" data-target="8700">0</div>
+          <div class="stat-suffix">+</div>
+          <div class="stat-name">Photographs Archived</div>
+          <div class="stat-desc">Historical & current condition photos</div>
+        </div>
+        <div class="stat-card" id="stat-3">
+          <div class="stat-icon">👥</div>
+          <div class="stat-number counter" data-target="2400">0</div>
+          <div class="stat-suffix">+</div>
+          <div class="stat-name">Community Members</div>
+          <div class="stat-desc">Citizens, historians & locals</div>
+        </div>
+        <div class="stat-card" id="stat-4">
+          <div class="stat-icon">🚨</div>
+          <div class="stat-number counter" data-target="127">0</div>
+          <div class="stat-suffix"></div>
+          <div class="stat-name">Sites Flagged for Rescue</div>
+          <div class="stat-desc">AI-identified at-risk locations</div>
+        </div>
+        <div class="stat-card" id="stat-5">
+          <div class="stat-icon">🎙️</div>
+          <div class="stat-number counter" data-target="540">0</div>
+          <div class="stat-suffix">+</div>
+          <div class="stat-name">Oral Stories Preserved</div>
+          <div class="stat-desc">Local legends, traditions & memories</div>
+        </div>
+        <div class="stat-card" id="stat-6">
+          <div class="stat-icon">🤖</div>
+          <div class="stat-number counter" data-target="12">0</div>
+          <div class="stat-suffix">K+</div>
+          <div class="stat-name">AI Analyses Run</div>
+          <div class="stat-desc">Heritage identification & deterioration checks</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ COMMUNITY ════════════ -->
+  <section class="community" id="community">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Community Voice</div>
+        <h2 class="section-title">Oral Histories That<br /><em>Must Not Be Lost</em></h2>
+        <p class="section-sub">Stories submitted by Goa's residents, verified by the community, preserved by HeritGoa.</p>
+      </div>
+
+      <div class="stories-grid">
+        <div class="story-card" id="story-1">
+          <div class="story-header">
+            <div class="story-avatar">👵</div>
+            <div class="story-meta">
+              <strong>Maria Fernandes</strong>
+              <span>Panaji resident · Verified Contributor</span>
+            </div>
+            <div class="story-type story-type--oral">Oral History</div>
+          </div>
+          <blockquote class="story-text">
+            "My grandfather used to say the old well behind the Fontainhas chapel was where Portuguese soldiers stored their maps. We children were forbidden from playing near it. The well is gone now, filled in during the 1990s road widening."
+          </blockquote>
+          <div class="story-site">📍 Fontainhas Chapel, Panaji</div>
+          <div class="story-actions">
+            <button class="story-like" id="story-1-like">❤️ 42</button>
+            <button class="story-verify" id="story-1-verify">✅ Verify</button>
+          </div>
+        </div>
+
+        <div class="story-card" id="story-2">
+          <div class="story-header">
+            <div class="story-avatar">👨‍🏫</div>
+            <div class="story-meta">
+              <strong>Prof. Ramakant Naik</strong>
+              <span>Historian · Expert Contributor</span>
+            </div>
+            <div class="story-type story-type--historical">Historical Record</div>
+          </div>
+          <blockquote class="story-text">
+            "The Tambdi Surla temple is the only surviving Kadamba-era temple in Goa. Built entirely of basalt rock, it predates the Portuguese arrival by at least 300 years. Its isolation in the forest is what saved it from destruction."
+          </blockquote>
+          <div class="story-site">📍 Tambdi Surla Temple, South Goa</div>
+          <div class="story-actions">
+            <button class="story-like" id="story-2-like">❤️ 89</button>
+            <button class="story-verify" id="story-2-verify">✅ Verified</button>
+          </div>
+        </div>
+
+        <div class="story-card" id="story-3">
+          <div class="story-header">
+            <div class="story-avatar">🎣</div>
+            <div class="story-meta">
+              <strong>Anthony D'Costa</strong>
+              <span>Fisherman · Anjuna Village</span>
+            </div>
+            <div class="story-type story-type--oral">Oral History</div>
+          </div>
+          <blockquote class="story-text">
+            "Chapora Fort — we called it our fort. In the 1970s, there was still a freshwater spring inside the walls. Our fathers drank from it. Today it's dry, and the walls are breaking piece by piece every monsoon."
+          </blockquote>
+          <div class="story-site">📍 Chapora Fort, Vagator</div>
+          <div class="story-actions">
+            <button class="story-like" id="story-3-like">❤️ 67</button>
+            <button class="story-verify" id="story-3-verify">✅ Verify</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="community-cta">
+        <div class="community-cta-text">
+          <h3>Have a story about Goa's heritage?</h3>
+          <p>Your family memories, local legends, and lived experiences are irreplaceable historical data.</p>
+        </div>
+        <a href="#" class="btn-primary" id="btn-share-story">Share Your Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ AI TOOL PREVIEW ══════ -->
+  <section class="ai-preview" id="ai-preview">
+    <div class="container">
+      <div class="ai-grid">
+        <div class="ai-text">
+          <div class="section-tag">AI Feature</div>
+          <h2 class="section-title">Upload a Photo.<br /><em>Let AI Tell the Story.</em></h2>
+          <p class="ai-desc">
+            Snap any old building, artifact, or architectural detail in Goa. Our Gemini Vision AI analyses the image, identifies possible architectural styles, and connects you to verified historical records in our database.
+          </p>
+          <ul class="ai-list">
+            <li>✅ Portuguese Baroque architecture detection</li>
+            <li>✅ Hindu temple style classification</li>
+            <li>✅ Damage and deterioration assessment</li>
+            <li>✅ Similarity matching with known sites</li>
+            <li>✅ Historical context from curated database</li>
+          </ul>
+          <div class="ai-disclaimer">
+            <span>ℹ️</span>
+            <em>AI provides architectural analysis, not definitive historical claims. All identifications are clearly labelled as AI suggestions pending community or authority verification.</em>
+          </div>
+        </div>
+        <div class="ai-demo">
+          <div class="ai-upload-box" id="ai-upload-box">
+            <div class="upload-inner">
+              <div class="upload-icon">📸</div>
+              <h4>Upload Heritage Photo</h4>
+              <p>Drag & drop or click to upload</p>
+              <p class="upload-hint">JPG, PNG, HEIC · Max 10MB</p>
+              <button class="btn-primary" id="btn-ai-upload">Choose Photo</button>
+            </div>
+          </div>
+          <div class="ai-result-preview">
+            <div class="result-header">
+              <span>🤖 AI Analysis Preview</span>
+              <span class="result-tag">Sample Output</span>
+            </div>
+            <div class="result-body">
+              <div class="result-row">
+                <span class="result-label">Architectural Style</span>
+                <span class="result-val">Portuguese Baroque</span>
+              </div>
+              <div class="result-row">
+                <span class="result-label">Estimated Period</span>
+                <span class="result-val">17th–18th Century</span>
+              </div>
+              <div class="result-row">
+                <span class="result-label">Heritage Category</span>
+                <span class="result-val">Religious Heritage</span>
+              </div>
+              <div class="result-row">
+                <span class="result-label">Similar Known Sites</span>
+                <span class="result-val result-link">Bom Jesus, Sé Cathedral +3</span>
+              </div>
+              <div class="result-row">
+                <span class="result-label">Condition Signal</span>
+                <span class="result-val result-warn">⚠️ Minor Deterioration</span>
+              </div>
+              <div class="result-disclaimer">
+                AI analysis suggests these characteristics. Historical verification pending.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ CTA ══════════════════ -->
+  <section class="cta-section" id="cta">
+    <div class="cta-bg">
+      <img src="assets/se_cathedral_goa.jpg" alt="Sé Cathedral Goa" class="cta-img" />
+      <div class="cta-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="cta-content">
+        <div class="section-tag section-tag--light">Join the Movement</div>
+        <h2 class="cta-title">Goa's Heritage Belongs<br />to <em>All of Us</em></h2>
+        <p class="cta-desc">Whether you're a historian, a tourist, a local resident, or a concerned citizen — you have a role to play in keeping Goa's heritage alive.</p>
+        <div class="cta-actions">
+          <a href="#" class="btn-hero-primary" id="btn-cta-explore">🗺️ Explore Heritage Map</a>
+          <a href="#" class="btn-hero-secondary" id="btn-cta-report">🚨 Report Damage</a>
+        </div>
+        <div class="cta-badges">
+          <span>🏛️ UNESCO World Heritage Sites</span>
+          <span>🤖 Powered by Gemini AI</span>
+          <span>🌿 Goa Culture Department</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ FOOTER ════════════════ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo footer-logo">
+            <span class="logo-icon">🏛️</span>
+            <span class="logo-text">Herit<span class="logo-accent">Goa</span></span>
+          </a>
+          <p class="footer-tagline">Goa's AI Heritage Intelligence Platform — documenting, preserving, and celebrating the living culture of Goa.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" id="social-x" aria-label="Twitter">𝕏</a>
+            <a href="#" class="social-btn" id="social-ig" aria-label="Instagram">📷</a>
+            <a href="#" class="social-btn" id="social-yt" aria-label="YouTube">▶️</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="#">Heritage Map</a></li>
+            <li><a href="#">AI Identification</a></li>
+            <li><a href="#">Deterioration Tracker</a></li>
+            <li><a href="#">Oral Histories</a></li>
+            <li><a href="#">Photo Archive</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Heritage Regions</h4>
+          <ul>
+            <li><a href="#">Old Goa (Velha Goa)</a></li>
+            <li><a href="#">Panaji & Fontainhas</a></li>
+            <li><a href="#">North Goa Talukas</a></li>
+            <li><a href="#">South Goa Talukas</a></li>
+            <li><a href="#">Coastal & Fort Trails</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="#">Report Damage</a></li>
+            <li><a href="#">Share a Story</a></li>
+            <li><a href="#">Upload Old Photos</a></li>
+            <li><a href="#">Volunteer</a></li>
+            <li><a href="#">Authority Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 HeritGoa — AI Heritage Intelligence Platform · Goa, India</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

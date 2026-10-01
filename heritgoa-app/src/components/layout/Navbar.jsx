@@ -20,8 +20,8 @@ export default function Navbar() {
     { label: 'Features',       href: '/#features'      },
     { label: 'Heritage Sites', href: '/#heritage-sites'},
     { label: 'Impact',         href: '/#stats'         },
-    { label: 'Community',      href: '/#community'     },
-    { label: 'Heritage Map',   href: '/heritage-map', highlight: true },
+    { label: 'AI Identify 🤖', href: '/identify', highlight: true },
+    { label: 'Heritage Map 🗺️',href: '/heritage-map'   },
   ];
 
   return (

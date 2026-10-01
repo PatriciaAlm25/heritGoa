@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════════
+   HeritGoa — Global Base Styles
+   Matching the exact visual language of the original index.html
+═══════════════════════════════════════════════════════════════ */
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    @apply font-outfit bg-navy text-white antialiased overflow-x-hidden;
+    background: #0a1628;
+  }
+
+  h1, h2, h3 { @apply font-playfair; }
+  h4, h5, h6, p, span, a, button, input { @apply font-outfit; }
+}
+
+@layer components {
+  /* ── Navbar ──────────────────────────────────────────────── */
+  .nav-logo-icon  { font-size: 1.5rem; }
+  .logo-accent    { color: #d4af37; }
+
+  /* ── Section Tags ────────────────────────────────────────── */
+  .section-tag {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full;
+    background: rgba(212,175,55,0.12);
+    color: #d4af37;
+    border: 1px solid rgba(212,175,55,0.25);
+  }
+
+  /* ── Buttons ─────────────────────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300;
+    background: linear-gradient(135deg, #d4af37, #a8892a);
+    color: #0a1628;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(212,175,55,0.35);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300;
+    color: rgba(255,255,255,0.75);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .btn-ghost:hover {
+    background: rgba(255,255,255,0.08);
+    color: white;
+  }
+
+  .btn-hero-primary {
+    @apply inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-base transition-all duration-300;
+    background: linear-gradient(135deg, #d4af37, #a8892a);
+    color: #0a1628;
+  }
+  .btn-hero-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(212,175,55,0.4);
+  }
+
+  .btn-hero-secondary {
+    @apply inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-base transition-all duration-300;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+  }
+  .btn-hero-secondary:hover {
+    background: rgba(255,255,255,0.18);
+    transform: translateY(-2px);
+  }
+
+  /* ── Cards ───────────────────────────────────────────────── */
+  .card-glass {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(212,175,55,0.1);
+    backdrop-filter: blur(10px);
+    @apply rounded-2xl;
+  }
+
+  /* ── Filter buttons ─────────────────────────────────────── */
+  .filter-btn {
+    @apply px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer;
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.65);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: rgba(212,175,55,0.15);
+    color: #d4af37;
+    border-color: rgba(212,175,55,0.3);
+  }
+
+  /* ── Marquee ─────────────────────────────────────────────── */
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+  }
+
+  /* ── Stat number counter ─────────────────────────────────── */
+  .stat-num { @apply font-outfit font-extrabold; font-size: clamp(2rem, 5vw, 3.5rem); }
+
+  /* ── Animate fade up ─────────────────────────────────────── */
+  .animate-fade-up {
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+    animation-delay: var(--delay, 0s);
+  }
+
+  /* ── Leaflet map container ───────────────────────────────── */
+  .leaflet-container {
+    background: #1a2332 !important;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  /* ── Heritage marker ─────────────────────────────────────── */
+  .heritage-marker {
+    width: 38px;
+    height: 38px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255,255,255,0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .heritage-marker:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.5); }
+  .heritage-marker span {
+    transform: rotate(45deg);
+    font-size: 16px;
+    line-height: 1;
+  }
+  .heritage-marker.active-marker {
+    box-shadow: 0 0 0 4px rgba(212,175,55,0.4), 0 6px 20px rgba(0,0,0,0.5);
+  }
+
+  /* ── Popup ──────────────────────────────────────────────── */
+  .leaflet-popup-content-wrapper {
+    background: #1a2332 !important;
+    border: 1px solid rgba(212,175,55,0.25) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.6) !important;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+  .leaflet-popup-content { margin: 0 !important; width: 280px !important; }
+  .leaflet-popup-tip-container { display: none; }
+  .leaflet-popup-close-button {
+    color: rgba(255,255,255,0.6) !important;
+    top: 8px !important;
+    right: 8px !important;
+    font-size: 20px !important;
+    z-index: 10;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #d4af37, #e8c94a, #c2714f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bg-navy-surface { background: rgba(255,255,255,0.04); }
+  .border-gold     { border-color: rgba(212,175,55,0.2); }
+  .scrollbar-hide  { -ms-overflow-style: none; scrollbar-width: none; }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+}
+
+/* ── Custom scrollbar ────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a1628; }
+::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.3); border-radius: 3px; }
+
+/* ── Keyframes ──────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

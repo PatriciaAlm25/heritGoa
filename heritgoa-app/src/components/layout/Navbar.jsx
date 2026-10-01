@@ -16,12 +16,14 @@ export default function Navbar() {
   useEffect(() => { setMobileOpen(false); }, [location]);
 
   const navLinks = [
-    { label: 'About',          href: '/#about'         },
-    { label: 'Features',       href: '/#features'      },
-    { label: 'Heritage Sites', href: '/#heritage-sites'},
-    { label: 'Impact',         href: '/#stats'         },
-    { label: 'Community',      href: '/#community'     },
-    { label: 'Heritage Map',   href: '/heritage-map', highlight: true },
+    { label: 'About',          href: '/#about'          },
+    { label: 'Features',       href: '/#features'       },
+    { label: 'Heritage Sites', href: '/#heritage-sites' },
+    { label: 'Impact',         href: '/#stats'          },
+    { label: 'Community',      href: '/#community'      },
+    { label: 'AI Identify 🤖', href: '/identify', highlight: true },
+    { label: 'Taxi Fares',     href: '/taxi-fares'      },
+    { label: 'Heritage Map 🗺️', href: '/heritage-map'   },
   ];
 
   return (

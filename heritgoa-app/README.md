@@ -1,5 +1,13 @@
 # React + Vite
 
+## OpenRouteService setup
+
+The taxi fare estimator sends place names to a protected `/api/ors-route` endpoint. That endpoint geocodes both places and requests an OpenRouteService `driving-car` route; only the returned road distance is sent back to the browser.
+
+For local development, copy `.env.example` to `.env.local` and set `ORS_API_KEY`. For Vercel deployments, set the same variable in the project's server environment. Never use a `VITE_` prefix for this key, because that would expose it to every visitor.
+
+The `api/ors-route.js` function is a Vercel-compatible serverless route. On another host, implement the same protected POST endpoint and keep the key in that host's server-side environment.
+
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
 Currently, two official plugins are available:

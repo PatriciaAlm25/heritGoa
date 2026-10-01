@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { ArrowLeft, MapPin, Shield, ExternalLink, Landmark, AlertTriangle, Users, Car } from 'lucide-react';
 import Navbar from '../components/layout/Navbar';
 import ReportIssueModal from '../components/heritage/ReportIssueModal';
+import TranslationPanel from '../components/heritage/TranslationPanel';
 import { getHeritageSiteById, getHeritageSites, getSourceCategory } from '../services/heritageService';
 import { getNearbyHeritage } from '../utils/distance';
 
@@ -170,6 +171,17 @@ export default function HeritageDetailPage() {
                   <p className="text-white/55 text-sm">{site.community_story_status}</p>
                 )}
               </div>
+
+              {/* ── AI Heritage Translation (Feature 12) ─────────── */}
+              <TranslationPanel
+                siteName={site.name}
+                textFields={[
+                  { label: 'Historical Background', content: site.historical_background },
+                  { label: 'Architecture',           content: site.architecture           },
+                  { label: 'Cultural Significance',  content: site.cultural_significance  },
+                ].filter(f => f.content?.trim())}
+              />
+
             </div>
 
             {/* Right: status cards */}

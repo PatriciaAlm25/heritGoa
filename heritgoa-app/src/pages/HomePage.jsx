@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
+import ReportIssueModal from '../components/heritage/ReportIssueModal';
 
 /* ── Counter hook ─────────────────────────────────────── */
 function useCounter(target, duration = 2000) {
@@ -127,6 +128,7 @@ const STATUS_MAP = {
 };
 
 export default function HomePage() {
+  const [reportOpen, setReportOpen]     = useState(false);
   const [activeFilter, setActiveFilter] = useState('all');
   const [c340, ref340] = useCounter(340);
   const [c12k, ref12k] = useCounter(12);
@@ -146,7 +148,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-navy text-white overflow-x-hidden">
-      <Navbar />
+      <Navbar onOpenReport={() => setReportOpen(true)} />
 
       {/* ═══════════════════════════ HERO ══════════════════════════════ */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -329,23 +331,117 @@ export default function HomePage() {
             </div>
 
             {[
-              { id:'feat-ai',     c:'#2563eb', icon:'🤖', title:'AI Heritage Identification', desc:'Upload any photo. Gemini Vision analyses architectural styles, detects heritage categories, and links you to verified historical records.', tag:'⭐ High Hackathon Value', tagClass:'text-amber-400' },
-              { id:'feat-detr',   c:'#059669', icon:'📊', title:'Deterioration Tracking',      desc:'Compare photos from 2018 → 2022 → 2026. AI detects paint loss, structural cracks, vegetation growth, and flags at-risk sites.', tag:'🔥🔥🔥 Signature Feature', tagClass:'text-red-400' },
-              { id:'feat-oral',   c:'#7c3aed', icon:'👵', title:'Local Oral Histories',        desc:'Community members contribute text, audio, and video stories. AI transcribes and moderates. Local voices preserved forever.', tag:'🔥 Cultural Innovation', tagClass:'text-orange-400' },
-              { id:'feat-report', c:'#dc2626', icon:'🚨', title:'Damage Reporting',            desc:'Citizens can report damage instantly. AI classifies severity and type, creating a direct pipeline to the heritage authority dashboard.', tag:'Civic Action', tagClass:'text-white/50' },
-              { id:'feat-photos', c:'#0891b2', icon:'📸', title:'Historical Photo Archive',    desc:'Upload old photographs from family albums. Link them to heritage sites and years to build a visual timeline of Goa\'s evolution.', tag:'Community-Powered', tagClass:'text-white/50' },
-              { id:'feat-trans',  c:'#d97706', icon:'🌐', title:'AI Translation',              desc:'Heritage content in Konkani, Marathi, and Portuguese translated to English and Hindi — without AI fabricating historical facts.', tag:'Multilingual', tagClass:'text-white/50' },
-            ].map(f => (
-              <div key={f.id} id={f.id} className="card-glass p-6 rounded-2xl hover:border-white/20 transition-all duration-300 hover:-translate-y-1">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4"
-                  style={{background:`${f.c}22`, border:`1px solid ${f.c}44`}}>
-                  {f.icon}
+              {
+                id: 'feat-ai',
+                c: '#2563eb',
+                icon: '🤖',
+                title: 'AI Heritage Identification',
+                desc: 'Upload any photo. Gemini Vision analyses architectural styles, detects heritage categories, and links you to verified historical records.',
+                tag: '⭐ High Hackathon Value',
+                tagClass: 'text-amber-400',
+                anchor: '#ai-preview',
+                actionLabel: 'Try AI Identification ↓',
+              },
+              {
+                id: 'feat-detr',
+                c: '#059669',
+                icon: '📊',
+                title: 'Deterioration Tracking',
+                desc: 'Compare photos from 2018 → 2022 → 2026. AI detects paint loss, structural cracks, vegetation growth, and flags at-risk sites.',
+                tag: '🔥🔥🔥 Signature Feature',
+                tagClass: 'text-red-400',
+                anchor: '#deterioration',
+                actionLabel: 'View Deterioration Engine ↓',
+              },
+              {
+                id: 'feat-oral',
+                c: '#7c3aed',
+                icon: '👵',
+                title: 'Local Oral Histories',
+                desc: 'Community members contribute text, audio, and video stories. AI transcribes and moderates. Local voices preserved forever.',
+                tag: '🔥 Cultural Innovation',
+                tagClass: 'text-orange-400',
+                linkTo: '/heritage/ASI-GOA-006',
+                actionLabel: 'Explore Oral Stories →',
+              },
+              {
+                id: 'feat-report',
+                c: '#dc2626',
+                icon: '🚨',
+                title: 'Damage Reporting',
+                desc: 'Citizens can report damage instantly. AI classifies severity and type, creating a direct pipeline to the heritage authority dashboard.',
+                tag: 'Civic Action',
+                tagClass: 'text-white/50',
+                isReportModal: true,
+                actionLabel: 'Report Damage Now 🚨',
+              },
+              {
+                id: 'feat-photos',
+                c: '#0891b2',
+                icon: '📸',
+                title: 'Historical Photo Archive',
+                desc: 'Upload old photographs from family albums. Link them to heritage sites and years to build a visual timeline of Goa\'s evolution.',
+                tag: 'Community-Powered',
+                tagClass: 'text-white/50',
+                anchor: '#ai-preview',
+                actionLabel: 'Upload Photo Archive ↑',
+              },
+              {
+                id: 'feat-trans',
+                c: '#d97706',
+                icon: '🌐',
+                title: 'AI Translation',
+                desc: 'Heritage content in Konkani, Marathi, and Portuguese translated to English and Hindi — without AI fabricating historical facts.',
+                tag: 'Multilingual · Text + Voice',
+                tagClass: 'text-amber-400',
+                linkTo: '/ai-translation',
+                actionLabel: 'Open AI Translator (Text & Voice) →',
+              },
+            ].map(f => {
+              const cardContent = (
+                <div className="flex flex-col h-full justify-between">
+                  <div>
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4 transition-transform group-hover:scale-110"
+                      style={{ background: `${f.c}22`, border: `1px solid ${f.c}44` }}>
+                      {f.icon}
+                    </div>
+                    <h3 className="font-semibold text-white mb-2 group-hover:text-amber-300 transition-colors">{f.title}</h3>
+                    <p className="text-white/55 text-sm leading-relaxed mb-3">{f.desc}</p>
+                  </div>
+                  <div className="pt-2 border-t border-white/8 flex items-center justify-between mt-auto">
+                    <span className={`text-xs font-medium ${f.tagClass}`}>{f.tag}</span>
+                    <span className="text-xs font-semibold text-amber-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                      {f.actionLabel}
+                    </span>
+                  </div>
                 </div>
-                <h3 className="font-semibold text-white mb-2">{f.title}</h3>
-                <p className="text-white/55 text-sm leading-relaxed mb-3">{f.desc}</p>
-                <span className={`text-xs font-medium ${f.tagClass}`}>{f.tag}</span>
-              </div>
-            ))}
+              );
+
+              if (f.linkTo) {
+                return (
+                  <Link key={f.id} id={f.id} to={f.linkTo}
+                    className="card-glass p-6 rounded-2xl hover:border-amber-500/40 transition-all duration-300 hover:-translate-y-1 group cursor-pointer block">
+                    {cardContent}
+                  </Link>
+                );
+              }
+
+              if (f.isReportModal) {
+                return (
+                  <div key={f.id} id={f.id} onClick={() => setReportOpen(true)}
+                    className="card-glass p-6 rounded-2xl hover:border-red-500/40 transition-all duration-300 hover:-translate-y-1 group cursor-pointer block">
+                    {cardContent}
+                  </div>
+                );
+              }
+
+              return (
+                <a key={f.id} id={f.id} href={f.anchor}
+                  className="card-glass p-6 rounded-2xl hover:border-amber-500/40 transition-all duration-300 hover:-translate-y-1 group cursor-pointer block">
+                  {cardContent}
+                </a>
+              );
+            })}
 
             {/* +5 card */}
             <div className="card-glass p-6 rounded-2xl flex flex-col items-center justify-center text-center" id="feat-more">
@@ -735,6 +831,13 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+
+      {/* ── Report Issue Modal ────────────────────────────────────────── */}
+      <ReportIssueModal
+        open={reportOpen}
+        onClose={() => setReportOpen(false)}
+        site={{ name: 'Goa Heritage Site' }}
+      />
     </div>
   );
 }

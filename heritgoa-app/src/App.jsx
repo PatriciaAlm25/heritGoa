@@ -2,8 +2,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import HeritageMapPage from './pages/HeritageMapPage';
 import HeritageDetailPage from './pages/HeritageDetailPage';
+import HomePage from './pages/HomePage';
+import HeritageMapPage from './pages/HeritageMapPage';
+import HeritageDetailPage from './pages/HeritageDetailPage';
 import TaxiFarePage from './pages/TaxiFarePage';
 import IdentifyHeritagePage from './pages/IdentifyHeritagePage';
+import AITranslationPage from './pages/AITranslationPage';
 import './index.css';
 
 export default function App() {
@@ -15,6 +19,7 @@ export default function App() {
         <Route path="/heritage-map" element={<HeritageMapPage />} />
         <Route path="/heritage/:siteId" element={<HeritageDetailPage />} />
         <Route path="/taxi-fares" element={<TaxiFarePage />} />
+        <Route path="/ai-translation" element={<AITranslationPage />} />
       </Routes>
     </BrowserRouter>
   );

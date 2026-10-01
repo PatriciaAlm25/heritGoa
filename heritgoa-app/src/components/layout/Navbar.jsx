@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-export default function Navbar() {
+export default function Navbar({ onOpenReport }) {
   const [scrolled,     setScrolled]     = useState(false);
   const [mobileOpen,   setMobileOpen]   = useState(false);
   const location = useLocation();
@@ -74,7 +74,7 @@ export default function Navbar() {
 
         {/* Desktop Actions */}
         <div className="hidden lg:flex items-center gap-3">
-          <a href="#" className="btn-ghost" id="btn-report">Report Issue</a>
+          <button onClick={onOpenReport} className="btn-ghost" id="btn-report">Report Issue</button>
           <Link to="/heritage-map" className="btn-primary" id="btn-explore">Explore Map</Link>
         </div>
 
@@ -116,7 +116,7 @@ export default function Navbar() {
             ))}
           </ul>
           <div className="flex flex-col gap-2 mt-4">
-            <a href="#" className="btn-ghost text-center">Report Issue</a>
+            <button onClick={onOpenReport} className="btn-ghost text-center">Report Issue</button>
             <Link to="/heritage-map" className="btn-primary text-center">Explore Map</Link>
           </div>
         </div>

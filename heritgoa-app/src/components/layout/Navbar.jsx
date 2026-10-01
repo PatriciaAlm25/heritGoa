@@ -21,6 +21,7 @@ export default function Navbar() {
     { label: 'Heritage Sites', href: '/#heritage-sites'},
     { label: 'Impact',         href: '/#stats'         },
     { label: 'Community',      href: '/#community'     },
+    { label: 'Taxi Fares',     href: '/taxi-fares'     },
     { label: 'Heritage Map',   href: '/heritage-map', highlight: true },
   ];
 

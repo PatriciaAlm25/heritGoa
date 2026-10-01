@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { ArrowLeft, MapPin, Shield, ExternalLink, Landmark, AlertTriangle, Users } from 'lucide-react';
+import { ArrowLeft, MapPin, Shield, ExternalLink, Landmark, AlertTriangle, Users, Car } from 'lucide-react';
 import Navbar from '../components/layout/Navbar';
 import ReportIssueModal from '../components/heritage/ReportIssueModal';
 import { getHeritageSiteById, getHeritageSites, getSourceCategory } from '../services/heritageService';
@@ -262,6 +262,13 @@ export default function HeritageDetailPage() {
               </div>
 
               {/* Report Button */}
+              {site.latitude && site.longitude && (
+                <Link to={`/taxi-fares?destination=${site.site_id}`}
+                  className="w-full py-3 rounded-xl text-sm font-semibold transition-all border flex items-center justify-center gap-2 hover:bg-white/5"
+                  style={{ borderColor: 'rgba(212,175,55,0.3)', color: '#d4af37' }}>
+                  <Car size={16} /> Estimate taxi fare
+                </Link>
+              )}
               <button
                 onClick={() => setReportOpen(true)}
                 className="w-full py-3 rounded-xl text-sm font-semibold transition-all border border-red-500/25 text-red-400 hover:bg-red-500/10">
